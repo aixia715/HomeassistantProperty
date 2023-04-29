@@ -1,0 +1,2 @@
+port = 8088  # fastapi所用的端口
+test_port = 8098  # 测试用的端口
