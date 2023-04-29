@@ -1,2 +1,2 @@
-# Homeassistant属性设置在这里
-hello = "Hello World!"
+hello = "hello"
+abc = "123"

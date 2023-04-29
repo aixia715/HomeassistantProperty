@@ -6,15 +6,17 @@
 
 from fastapi_app import app
 import logging
+from variables_operate import *
 
 logger = logging.getLogger()
 
 
-@app.get("/get/{name}")
+@app.get("/get/")
 async def get(name: str):
-    return {"message": name}
+    return {name: get_v(name)}
 
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+@app.get("/set/")
+async def set_(name: str, value: str):
+    set_v(name, value)
+    return {name: get_v(name)}
