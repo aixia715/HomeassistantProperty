@@ -25,4 +25,11 @@ def is_testing_env():
 
 
 def setup_logging():
+    # 创建log文件夹
+    if not os.path.exists("log"):
+        try:
+            os.mkdir("log")
+        except OSError:
+            print("创建log文件夹失败")
+            exit(1)
     logging.config.fileConfig("main_log.ini")  # 日志配置文件。日志将同时输出到控制台和日志文件中
